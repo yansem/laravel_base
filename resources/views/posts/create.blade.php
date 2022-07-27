@@ -36,14 +36,24 @@
                     @endforeach
                 </select>
             </div>
+
             <div class="form-group">
                 <label for="tags">Tags</label>
                 <select multiple class="form-control" id="tags" name="tags[]">
                     @foreach($tags as $tag)
-                        <option value="{{ $tag->id }}">{{ $tag->title }}</option>
+                        <option value="{{ $tag->id }}"
+                        @if(old('tags') !== null)
+                            @foreach(old('tags') as $old_tag)
+                                {{ $tag->id == $old_tag ? 'selected' : '' }}
+                                @endforeach
+                            @endif
+                        >
+                            {{ $tag->title }}
+                        </option>
                     @endforeach
                 </select>
             </div>
+
             <button type="submit" class="btn btn-primary">Create</button>
         </form>
     </div>

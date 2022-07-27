@@ -9,11 +9,17 @@
                 <input type="text" name="title" class="form-control" id="title" placeholder="Title" value="{{
                 $post->title
                 }}">
+                @error('title')
+                <p class="text-danger">{{ $message }}</p>
+                @enderror
             </div>
             <div class="form-group">
                 <label for="content">Content</label>
                 <textarea class="form-control" name="content" id="content" placeholder="Content">{{ $post->content
                 }}</textarea>
+                @error('content')
+                <p class="text-danger">{{ $message }}</p>
+                @enderror
             </div>
             <div class="form-group">
                 <label for="image">Image</label>
