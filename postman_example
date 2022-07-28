@@ -1,0 +1,19 @@
+{
+    "title": "some title",
+    "content": "some content",
+    "image": "some image",
+    "likes": 20,
+    "category":{
+        "id": 1,
+        "title": "some category"
+    },
+    "tags": [
+        {
+            "id":10,
+            "title": "update tag"
+        },
+        {
+            "title": "new tag"
+        }
+    ]
+}
